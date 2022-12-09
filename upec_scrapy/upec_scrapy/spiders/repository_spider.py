@@ -22,7 +22,7 @@ class RepositorySpider(scrapy.Spider):
             return response.xpath(query).get()
 
         yield {
-            'title': extract_with_xpath('//table[@class="table itemDisplayTable"]/tr[1]/td[2]/text()'),
+            'title': extract_with_xpath('//*[@id="content"]/div[3]/div[3]/table/tbody/tr[2]/td[3]/text()'),
             'authors': extract_with_xpath('//table[@class="table itemDisplayTable"]/tr[2]/td[2]/text()'),
             'keywords': extract_with_xpath('//table[@class="table itemDisplayTable"]/tr[3]/td[2]/text()'),
             'date': extract_with_xpath('//table[@class="table itemDisplayTable"]/tr[4]/td[2]/text()'),
